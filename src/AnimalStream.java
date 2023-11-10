@@ -15,7 +15,7 @@ public class AnimalStream {
         );
 
         List<Animal> birds = animals.stream()
-                .filter(animal -> animal.getSpecies().equals("哺乳類"))
+                .filter(animal -> animal.getSpecies().equals("鳥類"))
                 .toList();
 
         List<Animal> sortedByAge = animals.stream()
@@ -26,7 +26,7 @@ public class AnimalStream {
                 .map(Animal::getName)
                 .collect(Collectors.joining("と"));
 
-        System.out.println("哺乳類の動物:"+ reptilesString);
+        System.out.println("鳥類の動物:"+ reptilesString);
         System.out.println("年齢(若い順)");
 
         for (int i = 0; i < sortedByAge.size(); i++) {
