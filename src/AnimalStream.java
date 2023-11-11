@@ -14,19 +14,19 @@ public class AnimalStream {
                 new Animal("サメ", "軟骨魚類", 6)
         );
 
-        List<Animal> birds = animals.stream()
-                .filter(animal -> animal.getSpecies().equals("鳥類"))
-                .toList();
+        List<Animal> reptiles = animals.stream()
+                .filter(animal -> animal.getSpecies().equals("爬虫類"))
+                .collect(Collectors.toList());
 
         List<Animal> sortedByAge = animals.stream()
                 .sorted(Comparator.comparingInt(Animal::getAge))
                 .toList();
 
-        String reptilesString = birds.stream()
+        String reptilesString = reptiles.stream()
                 .map(Animal::getName)
                 .collect(Collectors.joining("と"));
 
-        System.out.println("鳥類の動物:"+ reptilesString);
+        System.out.println("爬虫類の動物:"+ reptilesString);
         System.out.println("年齢(若い順)");
 
         for (int i = 0; i < sortedByAge.size(); i++) {
